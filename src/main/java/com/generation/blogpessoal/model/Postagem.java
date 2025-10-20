@@ -42,6 +42,13 @@ public class Postagem {
 	@JsonIgnoreProperties("postagem") //evita o loop infinito na hora de fazer a requisição
 	private Tema tema;
 
+<<<<<<< HEAD
+=======
+	@ManyToOne //muitas postagens para um tema
+	@JsonIgnoreProperties("postagem") //evita o loop infinito na hora de fazer a requisição
+	private Usuario usuario;
+
+>>>>>>> 63a3788 (Cria dependências para o Spring Security)
 	public Long getId() {
 		return id;
 	}
@@ -82,6 +89,17 @@ public class Postagem {
 		this.tema = tema;
 	}
 
+<<<<<<< HEAD
+=======
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
+
+>>>>>>> 63a3788 (Cria dependências para o Spring Security)
 
 	
 	}
