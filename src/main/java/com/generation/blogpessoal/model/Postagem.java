@@ -1,11 +1,8 @@
 package com.generation.blogpessoal.model;
 
 import java.time.LocalDateTime;
-
 import org.hibernate.annotations.UpdateTimestamp;
-
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -21,7 +18,7 @@ import jakarta.validation.constraints.Size;
 public class Postagem {
 	
 	@Id  //primary key (id)
-	@GeneratedValue(strategy = GenerationType.IDENTITY) //auto increment
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
 	
@@ -39,16 +36,15 @@ public class Postagem {
 	private LocalDateTime data;
 	
 	@ManyToOne //muitas postagens para um tema
-	@JsonIgnoreProperties("postagem") //evita o loop infinito na hora de fazer a requisição
+	@JsonIgnoreProperties("postagem") //evita o loop infinito na requisição
 	private Tema tema;
 
-<<<<<<< HEAD
-=======
+
 	@ManyToOne //muitas postagens para um tema
 	@JsonIgnoreProperties("postagem") //evita o loop infinito na hora de fazer a requisição
 	private Usuario usuario;
 
->>>>>>> 63a3788 (Cria dependências para o Spring Security)
+
 	public Long getId() {
 		return id;
 	}
@@ -89,8 +85,7 @@ public class Postagem {
 		this.tema = tema;
 	}
 
-<<<<<<< HEAD
-=======
+
 	public Usuario getUsuario() {
 		return usuario;
 	}
@@ -99,7 +94,6 @@ public class Postagem {
 		this.usuario = usuario;
 	}
 
->>>>>>> 63a3788 (Cria dependências para o Spring Security)
 
 	
 	}
