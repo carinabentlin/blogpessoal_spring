@@ -25,6 +25,7 @@ import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 
 import jakarta.validation.constraints.Size;
+import io.swagger.v3.oas.annotations.media.Schema;
  
 @Entity
 
@@ -41,6 +42,8 @@ public class Usuario {
 	@NotBlank(message = "O Atributo Nome é Obrigatório!")
 
 	private String nome;
+	
+	@Schema(example = "email@email.com.br")
  
 	@NotBlank(message = "O Atributo Usuário é Obrigatório!")
 
