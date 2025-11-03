@@ -28,12 +28,14 @@ public class JwtService {
     }
     
     private Claims extractAllClaims(String token) {
-        return Jwts.parser()
-            .verifyWith(signingKey)
-            .build()
-            .parseSignedClaims(token)
-            .getPayload();
+        return Jwts.parserBuilder()
+                .setSigningKey(signingKey)
+                .build()
+                .parseClaimsJws(token)
+                .getBody();
     }
+
+    
 
     public String extractUsername(String token) {
         return extractAllClaims(token).getSubject();
@@ -52,11 +54,12 @@ public class JwtService {
     public String generateToken(String username) {
         Instant now = Instant.now();
         return Jwts.builder()
-            .subject(username)
-            .issuedAt(Date.from(now))
-            .expiration(Date.from(now.plus(EXPIRATION_DURATION)))
-            .signWith(signingKey)
-            .compact();
+                .setSubject(username)
+                .setIssuedAt(Date.from(now))
+                .setExpiration(Date.from(now.plus(EXPIRATION_DURATION)))
+                .signWith(signingKey)
+                .compact();
+    }
+
     }
     
-}

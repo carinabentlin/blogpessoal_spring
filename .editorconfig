@@ -1,0 +1,25 @@
+# EditorConfig ajuda a manter estilos de codificação consistentes
+# Coloque este arquivo na raiz do projeto (mesmo nível do pom.xml)
+
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+indent_style = space
+indent_size = 4
+trim_trailing_whitespace = true
+
+# Arquivos XML, POM e config (ex: Spring)
+[*.{xml,properties,yml,yaml}]
+charset = utf-8
+indent_style = space
+indent_size = 2
+
+# Arquivos Java
+[*.java]
+charset = utf-8
+indent_style = space
+indent_size = 4
+insert_final_newline = tr
